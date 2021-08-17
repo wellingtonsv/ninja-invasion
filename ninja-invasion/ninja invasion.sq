@@ -1,0 +1,278 @@
+[[begin]]:
+Ninja Invasion
+
+1415 A.C. You are a ninja warrior, member of the Gozoku Clan. You received a mission to infiltrate the shogun castle and end his reign. Rumors say they have been fooling with forbidden alchemy techniques.
+You stand, hidden, near the castle's entrance. Two samurai block the path. There are also cherry trees and stones.
+    
+[[Attack the soldier]](soldier)
+
+[[Grab a stone and throw]](grab throw)
+
+[[soldier]]:
+The samurai unsheath their katana<br>
+You kill one, but the other cuts you in half. You died.
+[[Back]](begin)
+
+[[grab throw]]:
+The stone made a loud noise, calling the soldiers's attention. The path is clear.
+
+[[Enter the door]](main hall)
+
+[[main hall]]:
+{if seen orange potion:
+You are back in the main hall. You sneak past the two confused guards, who are still looking for an intruder. Only the skull-marked door remains unchecked, but you could also exit through the main door and give up this foolish quest.
+
+[[Enter the skull-marked door]](skull door)
+
+[[Run for your life]](runaway ending)
+}
+{else:
+You are in the castle main hall.<br>
+To the left, you see a door marked with a potion symbol. To the right, another door is marked with a skull symbol. A samurai guards each entrance. There are also masks hanging at the wall, armory and a candle lighting the room.
+
+[[Enter the left door (potion mark)]](left door)
+
+[[Enter the right door (skull mark)]](right door)
+
+[[Blow out the candle]](the candle)
+}
+
+
+[[left door]]:
+You were caught. You died.
+
+[[Back]](main hall)
+
+[[right door]]:
+You were caught. You died.<br>
+
+[[Back]](main hall)
+
+[[the candle]]:
+The room is dark. The guards can no longer see you.
+
+[[Enter the left door (potion mark)]](potion door)
+
+[[Enter the right door (skull mark)]](skull door)
+
+[[potion door]]:
+The room is empty. There are some marks on the floor. There is also a door leading to another room.
+
+[[Enter the door]](trap)
+
+[[Throw shuriken at the door]](shuriken)
+
+[[trap]]:
+You fell into a trap. It appeared a hole beneath you. The ground is full of spikes. You died.
+
+[[Back]](potion door)
+
+[[shuriken]]:
+You activated a trap on the door. You now see the safe path.
+
+[[Enter the laboratory]](laboratory)
+
+[[laboratory]]:
+You see a laboratory. The room has a wardrobe, skeletons and a giant table full of test tubes. The light is dim.
+
+[[Examine the table]](table)
+
+[[Examine the wardrobe]](wardrobe)
+
+[[Exit through the door you came from]](alchemist)
+
+[[table]]:
+You see five different potions. Their colors are white, black, blue, green and orange.
+
+[[Back]](laboratory)
+
+[[wardrobe]]:
+You see a dead body covered in blood.
+
+[[Back]](laboratory)
+
+[[alchemist]]:
+You sense someone you hadn't noticed approaching. It is the chief alchemist.<br>
+Alchemist: "Well, I suppose you were trying to sabotage the plans. The Shogun will not be pleased to know you were here. However, we can play a little game. I believe you have seen the five potions here. Only one will not kill you when you drink it. If you discover the right one, I can tell the secret of our secret weapon. If not, you die. You cannot leave. To help you, I can give you a hint: What does one see as the light of day meets the darkness of night?"
+
+[[Run away]](ninjas) 
+
+[[Drink the white potion]](wrong potion)
+
+[[Drink the black potion]](wrong potion)
+
+[[Drink the blue potion]](wrong potion)
+
+[[Drink the green potion]](wrong potion)
+
+[[Drink the orange potion]](orange potion)
+
+[[ninjas]]:
+The alchemist summons the guards. You kill some of them, but they eventually overwhelm you. You died.
+
+[[Back]](alchemist)
+
+[[wrong potion]]:
+The potion is poisoned. You died.
+
+[[Back]](alchemist)
+
+[[orange potion]]:
+The potion has no effect on you.<br>
+Alchemist: "That's right. The right answer is the sunset, which is orange. Well, I like you. I've been kept as a prisoner here since 1390 A.C. Twenty-five years… We are seeking the Philosopher's Stone. That's right. We are in the middle of the tests. What you can find here is just the incomplete version, our researchers haven't finished yet. It grants incredible powers to whoever possesses it. But, in the current state, it will demand a high cost... You can't touch it with your own hands. Take these golden gauntlets and you will be able to handle it. And remember: it's fragile. Please don't break it, for my own sake. Farewell."
+
+[[Back to main hall]](main hall)
+
+[[skull door]]:
+The room is filled with weapons. There is a bookshelf. There are two candles, one lit and one unlit. It looks like a dead end.
+
+[[Examine the weapons]](weapons)
+
+[[Examine the bookshelf]](bookshelf)
+
+{if seen book:
+[[Grab the lit candle]](grab lit candle)
+}
+
+
+[[weapons]]:
+Looks like regular weapons.
+
+[[Back]](skull door)
+
+[[bookshelf]]:
+There are books about black magic. There is a suspicious purple book.
+
+[[Examine the book]](book)
+
+[[Back]](skull door)
+
+[[book]]:
+The book has a marked page. It says: "キャンドルを照らす。". You are thankful for knowing the language, since there is no way to search for something like this in your world.
+
+[[Back]](skull door)
+
+[[grab lit candle]]:
+You hold the lit candle in your hands.
+
+[[Examine the weapons]](weapons)
+
+[[Examine the bookshelf]](bookshelf)
+
+[[Light the other candle]](light candle)
+
+[[light candle]]:
+The bookshelf moves and a narrow passageway stands before you.
+
+[[Enter the passage]](throne room)
+
+[[throne room]]:
+You are in the throne room. To your left, {if seen orange potion:the philosopher's stone}{else: a crimson red} shines atop an altar. A large, menacing man sits at the throne, unaware of your presence. The shogun.
+
+{if seen orange potion:
+[[Grab the philosopher's stone]](grab philosopher stone)
+
+{if seen golden gloves:}
+{else:
+[Wear the golden gloves](golden gloves)
+}
+}
+{else:
+[[Grab the red stone]](grab philosopher stone)
+}
+
+[[Throw shuriken at the shogun]](shuriken shogun)
+
+[[Strike the shogun with your sword]](strike shogun)
+
+[[Run for your life]](runaway ending)
+
+[golden gloves]:
+You put on the golden gloves. You may now safely handle the philosopher's stone.
+
+[[Back]](throne room)
+
+[[grab philosopher stone]]:
+{if seen golden gloves:
+The philosopher's stone starts glowing as you feel a rush of power. The shogun notices and rushes toward you, sword in hand. You must decide what to do.
+
+[[Strike the shogun]](strike shogun)
+
+[[Crush the stone]](crushed stone ending)
+}
+{else:
+The stone is poisoned. Your skin is turning dark. Your vision is fading. You died.
+
+[[Back]](throne room)
+}
+
+[[shuriken shogun]]:
+Your shuriken hits the shogun right in the head. His limp body falls to the ground. Waves of guards come at you, but you manage to escape the castle.
+
+[[Continue]](dead shogun ending)
+
+[[strike shogun]]:
+{if seen golden gloves:
+{if seen grab philosopher stone:
+The shogun attacks you, but his movements are now incredibly slow. You parry his sword and counter attack with a clean slash at the throat. The shogun is dead.<br>
+The guards rush at you, but you quickly dispatch them. You must now decide what to do with the philosopher's stone.
+
+[[Destroy the stone]](destroyed stone ending)
+
+[[Keep the stone]](kept stone ending)
+}
+{else:
+The shogun notices your advance. He parries your sword and counter attacks, never even leaving the throne. You died.
+
+[[Back]](throne room)
+}
+}
+{else:
+The shogun notices your advance. He parries your sword and counter attacks, never even leaving the throne. You died.
+
+[[Back]](throne room)
+}
+
+[[crushed stone ending]]:
+You crush the philosopher's stone, but the furious shogun delivers a killing stab to your heart. He keeps stabbing as you lose your strength and your body falls to the ground, in pieces. You have sacrificed yourself for the sake of the clan.
+
+Now back to traditional warfare, the battle between the clan and the shogun stretchs for countless generations, with both sides taking losses. The lone warrior who once sacrificed himself to prevent the shogun from rising to full power is remembered fondly.
+
+The clan and the shogun live. Yet, some wonder if it would not have been possible eliminate the shogun threat entirely, instead of only damaging it.
+
+[[Restart]](restart)
+
+[[dead shogun ending]]:
+A few years pass. Your clan prospers for a time, but a new shogun eventually rises. Glowing with a bright red power, he decimates your people and kills you. 
+
+Your clan is no more. The new shogun reigns.
+
+[[Restart]](restart)
+
+[[runaway ending]]: 
+Cowering in fear, you run away. You survive the invasion, but the shogun lives.<br> Months later, he appears at your village and, glowing red with power, destroys your clan and kills you.
+
+Your clan is no more. The shogun reigns.   
+
+[[Restart]](restart)
+
+[[destroyed stone ending]]:
+You smash the stone with your own hands. Its fragments enter your skin, killing you in a few moments. You sacrificed yourself for the sake of the clan.
+
+The shogunate has been extinguished and people are free once again. The clan remains their protector from the shadows, prospering alongside them. The efforts of the lone warrior taking on the full might of the shogun will be remembered for generations to come.
+
+You have fullfilled your destiny. 
+
+[[Restart]](restart)
+
+[[kept stone ending]]:
+You keep the stone. The glow calls to you, its beauty mysteriously captivating. It brings out everything you had under restraint: your desires, your hunger for power, your... vision of a great nation. You no longer feel the need to pay respects to the clan. They do not see what you see.
+
+After taking control of the castle, you decide to establish a brand new seat of power. You clear the lands of your former clan in a massacre, personally delivering the killing blow to your old masters. 
+
+Your clan is no more. You, the almighty shogun, reign.
+
+[[Restart]](restart)
+
+[[restart]]:
+    squiffy.story.restart();
